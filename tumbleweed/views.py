@@ -284,7 +284,7 @@ def archive_day(request, year, month, day, searchqueryset=None, date_field='pub_
     if not searchqueryset:
         searchqueryset = SearchQuerySet().all()
 
-    # More logic courtersy of Django
+    # More logic courtesy of Django
     try:
         tt = time.strptime('%s-%s-%s' % (year, month, day),
                            '%s-%s-%s' % ('%Y', month_format, day_format))
