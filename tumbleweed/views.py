@@ -54,11 +54,6 @@ def tumble(request, date_field='pub_date', template_name='tumbleweed/tumble.html
     .. _Paginator: http://docs.djangoproject.com/en/dev/topics/pagination/
     """
 
-    # -- TODO: limit by model (site-wide setting, per-view override)
-    # X- TODO: Extra filtering (is_staff, etc)
-    # X- TODO: date-based tumble (tumble for day, etc)
-    # X- TODO: fix to work with .order_by('-pub_date')
-    # TODO: Investigate __year, __month, __day support for haystack.
     if not searchqueryset:
         searchqueryset = SearchQuerySet().all()
     things = searchqueryset.order_by('-%s' % date_field)
@@ -133,8 +128,6 @@ def archive_year(request, year, searchqueryset=None, date_field='pub_date', temp
         year = int(year)
     except ValueError:
         return HttpResponseServerError(u'An integer is required for year.')
-
-    # TODO: List of months?
 
     # TODO: Less ugly, please.
     lookup_kwargs = {
