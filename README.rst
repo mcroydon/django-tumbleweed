@@ -96,6 +96,11 @@ TODO
 - Tumble template tag
 - Tests
 
+License
+=======
+
+Tumbleweed is released under the new-style BSD license.
+
 .. _Haystack: http://haystacksearch.org/
 .. _Whoosh: http://whoosh.ca/
 .. _Solr: http://lucene.apache.org/solr/
