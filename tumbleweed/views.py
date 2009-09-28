@@ -3,7 +3,7 @@ from django.template.context import RequestContext
 from django.core.paginator import Paginator
 from django.http import Http404, HttpResponseServerError
 from haystack.query import SearchQuerySet
-import settings
+from django.conf import settings
 import datetime, time
 
 RESULTS_PER_PAGE = getattr(settings, 'TUMBLEWEED_RESULTS_PER_PAGE', 20)
